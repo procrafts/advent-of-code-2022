@@ -12,7 +12,7 @@ public class Main {
 
     }
 
-    public static List<Integer> run1(String fileName) throws URISyntaxException, IOException {
+    public static List<Integer> run01(String fileName) throws URISyntaxException, IOException {
         File file = readFile(fileName);
         List<String> example = convertFileToStrings(file);
         LinkedList<LinkedList<String>> emptyList = new LinkedList<>();

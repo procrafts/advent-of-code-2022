@@ -31,15 +31,15 @@ class MainTest {
                 8000
                 9000
                                 
-                10000""".split("\n")).toList(), Main.convertFileToStrings(Main.readFile("example1.txt")));
+                10000""".split("\n")).toList(), Main.convertFileToStrings(Main.readFile("challenge01-example.txt")));
     }
 
     @Test
     void Main_run1() throws URISyntaxException, IOException {
-        List<Integer> exampleResult = Main.run1("example1.txt");
+        List<Integer> exampleResult = Main.run01("challenge01-example.txt");
         assertEquals(24000, exampleResult.get(0));
         assertEquals(45000, exampleResult.get(1));
-        List<Integer> result = Main.run1("input1.txt");
+        List<Integer> result = Main.run01("challenge01-input.txt");
         assertEquals(72478, result.get(0));
         assertEquals(210367, result.get(1));
         System.out.println("-----");
