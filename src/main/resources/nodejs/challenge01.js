@@ -1,4 +1,5 @@
 const readInput = require('./utils/readInput');
+const sum = require('./utils/sum');
 
 const caloriesList = readInput(1);
 const groupByElf = caloriesList.split("\n").reduce(group, [[]]);
@@ -16,10 +17,6 @@ function group(g, s) {
         g.push([]);
     }
     return g
-}
-
-function sum(a, b) {
-    return +a + +b;
 }
 
 function sortDesc(a, b) {
