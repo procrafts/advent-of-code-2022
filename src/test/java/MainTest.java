@@ -31,7 +31,7 @@ class MainTest {
                 8000
                 9000
                                 
-                10000""".split("\n")).toList(), Main.convertFileToStrings(Main.readFile("challenge01-example.txt")));
+                10000""".split("\n")).toList(), FileHandler.convertFileToStrings(FileHandler.readFile("challenge01-example.txt")));
     }
 
     @Test
@@ -55,6 +55,19 @@ class MainTest {
         var result = Main.run02("challenge02-input.txt");
         assertEquals(15422, result.get(0));
         assertEquals(15442, result.get(1));
+        System.out.println("-----");
+        System.out.println(result);
+        System.out.println("-----");
+    }
+
+    @Test
+    void Main_run3() throws URISyntaxException, IOException {
+        var exampleResult = Main.run03("challenge03-example.txt");
+        assertEquals(157, exampleResult.get(0));
+        assertEquals(70, exampleResult.get(1));
+        var result = Main.run03("challenge03-input.txt");
+        assertEquals(8233, result.get(0));
+        assertEquals(2821, result.get(1));
         System.out.println("-----");
         System.out.println(result);
         System.out.println("-----");
