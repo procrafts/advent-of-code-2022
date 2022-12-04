@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
     }
@@ -43,6 +44,18 @@ public class Main {
         int sum2 = badgeItemNumbers.stream().mapToInt(x -> x).sum();
 
         return Arrays.asList(sum, sum2);
+    }
+
+    public static List<Integer> run04(String fileName) throws URISyntaxException, IOException {
+        List<String> assignments = FileHandler.readFileAsStringList(fileName);
+        List<List<List<String>>> pairDescription = RoomManagement.getRoomDescription(assignments);
+        List<Integer> areFullyContained = pairDescription.stream().map(RoomManagement::isFullyContained).toList();
+        int sum1 = areFullyContained.stream().mapToInt(x -> x).sum();
+
+        List<Integer> arePartlyContained = pairDescription.stream().map(RoomManagement::isPartlyContained).toList();
+        int sum2 = arePartlyContained.stream().mapToInt(x -> x).sum();
+
+        return Arrays.asList(sum1, sum2);
     }
 
     public static LinkedList<LinkedList<String>> group(LinkedList<LinkedList<String>> list, String s) {
