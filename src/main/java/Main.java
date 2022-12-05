@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 
 public class Main {
 
-
     public static void main(String[] args) {
 
     }
@@ -15,7 +14,7 @@ public class Main {
         List<String> example = FileHandler.readFileAsStringList(fileName);
         LinkedList<LinkedList<String>> emptyList = new LinkedList<>();
         emptyList.add(new LinkedList<>());
-        LinkedList<LinkedList<String>> splitInGroups = example.stream().reduce(emptyList, Main::group, (l, i) -> l);
+        LinkedList<LinkedList<String>> splitInGroups = example.stream().reduce(emptyList, Calories::group, (l, i) -> l);
         LinkedList<Integer> summedUpGroups = splitInGroups.stream().map(l -> l.stream().mapToInt(Integer::parseInt).sum()).collect(Collectors.toCollection(LinkedList::new));
         List<Integer> sorted = new ArrayList<>(summedUpGroups.stream().sorted().toList());
         Collections.reverse(sorted);
@@ -58,13 +57,19 @@ public class Main {
         return Arrays.asList(sum1, sum2);
     }
 
-    public static LinkedList<LinkedList<String>> group(LinkedList<LinkedList<String>> list, String s) {
-        if (s.equals("")) {
-            list.add(new LinkedList<>());
-        } else {
-            list.getLast().add(s);
-        }
-        return list;
+    public static List<String> run05(String fileName) throws URISyntaxException, IOException {
+        List<String> overview = FileHandler.readFileAsStringList(fileName);
+        CargoCrane9000 cargoCrane9000 = new CargoCrane9000(overview);
+        cargoCrane9000.runCommands();
+        String sum1 = cargoCrane9000.getUpperCrates();
+
+        CargoCrane9001 cargoCrane9001 = new CargoCrane9001(overview);
+        cargoCrane9001.enableAirConditioning();
+        cargoCrane9001.moveLeatherSeat();
+        cargoCrane9001.takeCupFromCupHolder();
+        cargoCrane9001.runCommands();
+        String sum2 = cargoCrane9001.getUpperCrates();
+        return Arrays.asList(sum1, sum2);
     }
 
 }
