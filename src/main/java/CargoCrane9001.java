@@ -11,12 +11,12 @@ public class CargoCrane9001 extends CargoCrane9000 {
         for (CraneCommand c : commands) {
             Stack<String> crates = new Stack<>();
             for (int i = 0; i < c.amount; i++) {
-                String cargo = stacks.get(c.from).removeLast();
-                crates.push(cargo);
+                String crate = stacks.get(c.from).removeLast();
+                crates.push(crate);
             }
             for (int i = 0; i < c.amount; i++) {
-                String cargo = crates.pop();
-                stacks.get(c.to).addLast(cargo);
+                String crate = crates.pop();
+                stacks.get(c.to).addLast(crate);
             }
         }
     }

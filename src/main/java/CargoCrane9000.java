@@ -8,7 +8,7 @@ public class CargoCrane9000 {
     protected final List<CraneCommand> commands;
 
     CargoCrane9000(List<String> overview) {
-        stacks = getCargoStacks(overview);
+        stacks = getEmptyStacks(overview);
         placeCrates(overview);
         commands = getCommands(overview);
     }
@@ -16,8 +16,8 @@ public class CargoCrane9000 {
     public void runCommands() {
         for (CraneCommand c : commands) {
             for (int i = 0; i < c.amount; i++) {
-                String cargo = stacks.get(c.from).removeLast();
-                stacks.get(c.to).addLast(cargo);
+                String crate = stacks.get(c.from).removeLast();
+                stacks.get(c.to).addLast(crate);
             }
         }
     }
@@ -33,15 +33,15 @@ public class CargoCrane9000 {
                     return;
                 }
                 int pos = (j - 1) == 0 ? 0 : (j - 1) / 4;
-                String cargo = String.valueOf(s.charAt(j));
-                if (!cargo.isBlank()) {
-                    stacks.get(pos).addFirst(cargo);
+                String crate = String.valueOf(s.charAt(j));
+                if (!crate.isBlank()) {
+                    stacks.get(pos).addFirst(crate);
                 }
             }
         }
     }
 
-    protected List<LinkedList<String>> getCargoStacks(List<String> overview) {
+    protected List<LinkedList<String>> getEmptyStacks(List<String> overview) {
         for (String s : overview) {
             if (s.charAt(1) == '1') {
                 return Arrays.stream(s.split(" ")).filter(x -> !x.isEmpty()).map(x -> new LinkedList<String>()).toList();
