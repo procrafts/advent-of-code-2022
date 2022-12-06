@@ -72,4 +72,10 @@ public class Main {
         return Arrays.asList(sum1, sum2);
     }
 
+    public static List<Integer> run06(String fileName) throws URISyntaxException, IOException {
+        List<String> signals = FileHandler.readFileAsStringList(fileName);
+        int sum1 = signals.stream().mapToInt(s -> CommunicationSubroutine.getFirstMarker(s, MarkerType.Package)).sum();
+        int sum2 = signals.stream().mapToInt(s -> CommunicationSubroutine.getFirstMarker(s, MarkerType.Message)).sum();
+        return Arrays.asList(sum1, sum2);
+    }
 }
