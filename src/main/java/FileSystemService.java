@@ -60,12 +60,12 @@ public class FileSystemService {
         return deletableDirectorySizes.stream().sorted().toList().get(0);
     }
 
-    static void findDeletableDirectory(Directory node, int neededSize, List<Integer> deletableDirectorySizes) {
+    private static void findDeletableDirectory(Directory node, int neededSize, List<Integer> deletableDirectorySizes) {
         int size = node.getSize();
         if (size >= neededSize) {
             deletableDirectorySizes.add(size);
         }
-        for (FileSystemNode child : node.children) {
+        for (FileSystemNode child : node.getChildren()) {
             if (child instanceof Directory) {
                 findDeletableDirectory((Directory) child, neededSize, deletableDirectorySizes);
             }
