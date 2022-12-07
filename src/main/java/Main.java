@@ -78,4 +78,12 @@ public class Main {
         int sum2 = signals.stream().mapToInt(s -> CommunicationSubroutine.getFirstMarker(s, MarkerType.Message)).sum();
         return Arrays.asList(sum1, sum2);
     }
+
+    public static List<Integer> run07(String fileName) throws URISyntaxException, IOException {
+        List<String> output = FileHandler.readFileAsStringList(fileName);
+        Directory root = FileSystemService.build(output);
+        int sum1 = FileSystemService.getTotalSize(root);
+        int sum2 = FileSystemService.deleteSmallestDirectory(root);
+        return Arrays.asList(sum1, sum2);
+    }
 }
