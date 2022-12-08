@@ -124,4 +124,17 @@ class MainTest {
         System.out.println(result);
         System.out.println("-----");
     }
+
+    @Test
+    void Main_run8() throws URISyntaxException, IOException {
+        var exampleResult = Main.run08("challenge08-example.txt");
+        assertEquals(21, exampleResult.get(0));
+        assertEquals(8, exampleResult.get(1));
+        var result = Main.run08("challenge08-input.txt");
+        assertEquals(1679, result.get(0));
+        assertEquals(536625, result.get(1));
+        System.out.println("-----");
+        System.out.println(result);
+        System.out.println("-----");
+    }
 }

@@ -86,4 +86,13 @@ public class Main {
         int sum2 = FileSystemService.deleteSmallestDirectory(root);
         return Arrays.asList(sum1, sum2);
     }
+
+    public static List<Integer> run08(String fileName) throws URISyntaxException, IOException {
+        List<String> input = FileHandler.readFileAsStringList(fileName);
+        Forest forest = new Forest(input);
+        int sum1 = forest.countVisibleTrees();
+        int sum2 = forest.getTreeWithHighestScenicScore().getScenicScore();
+
+        return Arrays.asList(sum1, sum2);
+    }
 }
