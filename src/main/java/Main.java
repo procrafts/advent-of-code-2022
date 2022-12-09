@@ -95,4 +95,22 @@ public class Main {
 
         return Arrays.asList(sum1, sum2);
     }
+
+    public static List<Integer> run09(String fileName) throws URISyntaxException, IOException {
+        List<String> input = FileHandler.readFileAsStringList(fileName);
+        List<Move> moves = input.stream().map(Move::new).toList();
+        int length = 10;
+        List<Knot> rope = new ArrayList<>(length);
+        for (int i = 0; i < length; i++) {
+            rope.add(i, i == 0 ? new Head() : new Tail(rope.get(i - 1)));
+        }
+        moves.forEach((m) -> {
+            for (int i = 0; i < m.steps; i++) {
+                rope.forEach(knot -> knot.makeMove(m.direction));
+            }
+        });
+        int sum1 = ((Tail) rope.get(1)).getVisited();
+        int sum2 = ((Tail) rope.get(rope.size() - 1)).getVisited();
+        return Arrays.asList(sum1, sum2);
+    }
 }
