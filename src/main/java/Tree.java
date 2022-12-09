@@ -1,5 +1,5 @@
 public class Tree {
-    final int height;
+    public final int height;
     private boolean visible = false;
     private int scenicScore = 1;
 
@@ -7,19 +7,21 @@ public class Tree {
         this.height = height;
     }
 
-    void setVisibility(boolean isVisible) {
-        if(isVisible) {
+    public void setVisibility(boolean isVisible) {
+        if (isVisible) {
             visible = true;
         }
     }
-    boolean isVisible() {
+
+    public boolean isVisible() {
         return visible;
     }
 
-    void improveScenicScore(int value) {
-       scenicScore *= value;
+    public void improveScenicScore(int value) {
+        scenicScore *= value;
     }
-    int getScenicScore() {
+
+    public int getScenicScore() {
         return scenicScore;
     }
 }

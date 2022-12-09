@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FileSystemService {
-    static Directory build(List<String> output) {
+    public static Directory build(List<String> output) {
         FileSystemNode root = new Directory("/");
         for (String line : output) {
             if (line.startsWith("$ cd ..")) {
@@ -37,7 +37,7 @@ public class FileSystemService {
         return (Directory) root;
     }
 
-    static int getTotalSize(Directory node) {
+    public static int getTotalSize(Directory node) {
         int sum = 0;
 
         if (node.getSize() <= 100000) {
@@ -52,7 +52,7 @@ public class FileSystemService {
         return sum;
     }
 
-    static int deleteSmallestDirectory(Directory node) {
+    public static int deleteSmallestDirectory(Directory node) {
         List<Integer> deletableDirectorySizes = new LinkedList<>();
         int freeSpace = 70000000 - node.getSize();
         int spaceToFreeUp = 30000000 - freeSpace;

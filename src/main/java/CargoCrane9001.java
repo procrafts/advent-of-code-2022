@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class CargoCrane9001 extends CargoCrane9000 {
-    CargoCrane9001(List<String> overview) {
+    public CargoCrane9001(List<String> overview) {
         super(overview);
     }
 
@@ -21,15 +21,15 @@ public class CargoCrane9001 extends CargoCrane9000 {
         }
     }
 
-    void enableAirConditioning() {
+    public void enableAirConditioning() {
 
     }
 
-    void moveLeatherSeat() {
+    public void moveLeatherSeat() {
 
     }
 
-    void takeCupFromCupHolder() {
+    public void takeCupFromCupHolder() {
 
     }
 }

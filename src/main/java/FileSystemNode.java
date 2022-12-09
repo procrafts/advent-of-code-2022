@@ -1,22 +1,22 @@
 import java.util.Comparator;
 
 public abstract class FileSystemNode implements Comparator<FileSystemNode> {
-    final String name;
+    public final String name;
     protected FileSystemNode parent;
 
-    FileSystemNode(String name) {
+    public FileSystemNode(String name) {
         this.name = name;
     }
 
-    FileSystemNode getParent() {
+    public FileSystemNode getParent() {
         return parent;
     }
 
-    void setParent(FileSystemNode parent) {
+    public void setParent(FileSystemNode parent) {
         this.parent = parent;
     }
 
-    abstract int getSize();
+    public abstract int getSize();
 
     @Override
     public int compare(FileSystemNode a, FileSystemNode b) {

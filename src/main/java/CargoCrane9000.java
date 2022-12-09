@@ -7,7 +7,7 @@ public class CargoCrane9000 {
     protected final List<LinkedList<String>> stacks;
     protected final List<CraneCommand> commands;
 
-    CargoCrane9000(List<String> overview) {
+    public CargoCrane9000(List<String> overview) {
         stacks = getEmptyStacks(overview);
         placeCrates(overview);
         commands = getCommands(overview);

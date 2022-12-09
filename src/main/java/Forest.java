@@ -99,7 +99,7 @@ public class Forest {
         return score;
     }
 
-    int countVisibleTrees() {
+    public int countVisibleTrees() {
         int count = 0;
         for (Tree[] line : forest) {
             for (Tree tree : line) {
@@ -111,7 +111,7 @@ public class Forest {
         return count;
     }
 
-    Tree getTreeWithHighestScenicScore() {
+    public Tree getTreeWithHighestScenicScore() {
         Tree result = null;
         for (Tree[] line : forest) {
             for (Tree tree : line) {

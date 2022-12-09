@@ -2,28 +2,28 @@ import java.util.HashMap;
 import java.util.List;
 
 public final class RockPaperScissors {
-    static HashMap<String, Integer> points = new HashMap<>() {{
+    public static HashMap<String, Integer> points = new HashMap<>() {{
         put("ROCK", 1);
         put("PAPER", 2);
         put("SCISSORS", 3);
     }};
-    static HashMap<String, String> elfHand = new HashMap<>() {{
+    public static HashMap<String, String> elfHand = new HashMap<>() {{
         put("A", "ROCK");
         put("B", "PAPER");
         put("C", "SCISSORS");
     }};
-    static HashMap<String, String> myHand = new HashMap<>() {{
+    public static HashMap<String, String> myHand = new HashMap<>() {{
         put("X", "ROCK");
         put("Y", "PAPER");
         put("Z", "SCISSORS");
     }};
-    static HashMap<String, String> recommendedPlay = new HashMap<>() {{
+    public static HashMap<String, String> recommendedPlay = new HashMap<>() {{
         put("X", "LOSE");
         put("Y", "DRAW");
         put("Z", "WIN");
     }};
 
-    static int calculateScore(List<String> match) {
+    public static int calculateScore(List<String> match) {
         if (myHand.get(match.get(1)).equals("ROCK")) {
             if (elfHand.get(match.get(0)).equals("ROCK")) {
                 return 3 + points.get("ROCK");
@@ -52,7 +52,7 @@ public final class RockPaperScissors {
         return 0;
     }
 
-    static int playAsRecommended(List<String> match) {
+    public static int playAsRecommended(List<String> match) {
         if (recommendedPlay.get(match.get(1)).equals("LOSE")) {
             if (elfHand.get(match.get(0)).equals("ROCK")) {
                 return points.get("SCISSORS");

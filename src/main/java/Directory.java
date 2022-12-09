@@ -4,24 +4,24 @@ import java.util.List;
 public class Directory extends FileSystemNode {
     protected LinkedList<FileSystemNode> children = new LinkedList<>();
 
-    Directory(String name) {
+    public Directory(String name) {
         super(name);
     }
 
     @Override
-    int getSize() {
+    public int getSize() {
         return children.stream().mapToInt(FileSystemNode::getSize).sum();
     }
 
-    List<FileSystemNode> getChildren() {
+    public List<FileSystemNode> getChildren() {
         return children;
     }
 
-    void addChild(FileSystemNode child) {
+    public void addChild(FileSystemNode child) {
         children.add(child);
     }
 
-    FileSystemNode getChild(String name) {
+    public FileSystemNode getChild(String name) {
         List<FileSystemNode> matches = children.stream().filter(c -> c.name.equals(name)).toList();
         if (matches.size() != 0) {
             return matches.get(0);
