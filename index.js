@@ -1,8 +1,9 @@
-require('./src/main/resources/nodejs/challenge01');
-require('./src/main/resources/nodejs/challenge02');
-require('./src/main/resources/nodejs/challenge03');
-require('./src/main/resources/nodejs/challenge04');
-require('./src/main/resources/nodejs/challenge05');
-require('./src/main/resources/nodejs/challenge06');
-require('./src/main/resources/nodejs/challenge07');
-require('./src/main/resources/nodejs/challenge08');
+require("./src/main/resources/nodejs/challenge01");
+require("./src/main/resources/nodejs/challenge02");
+require("./src/main/resources/nodejs/challenge03");
+require("./src/main/resources/nodejs/challenge04");
+require("./src/main/resources/nodejs/challenge05");
+require("./src/main/resources/nodejs/challenge06");
+require("./src/main/resources/nodejs/challenge07");
+require("./src/main/resources/nodejs/challenge08");
+require("./src/main/resources/nodejs/challenge09");
