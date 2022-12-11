@@ -8,3 +8,4 @@ require("./src/main/resources/nodejs/challenge07");
 require("./src/main/resources/nodejs/challenge08");
 require("./src/main/resources/nodejs/challenge09");
 require("./src/main/resources/nodejs/challenge10");
+require("./src/main/resources/nodejs/challenge11");
