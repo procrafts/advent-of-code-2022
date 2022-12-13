@@ -19,9 +19,10 @@ async function main() {
   explore(map, start);
   const sum1 = getEnd(map).fewestSteps;
 
-  const results = getMaps(input).map(startExplorationWorker);
-  const stepsList = await Promise.all(results);
-  const sum2 = getMinSteps(stepsList); // long runtime, results in (input: 492, example: 29)
+  // long runtime, results in (input: 492, example: 29)
+  // const results = getMaps(input).map(startExplorationWorker);
+  // const stepsList = await Promise.all(results);
+  // const sum2 = getMinSteps(stepsList);
 
   console.log([sum1, 492]);
 }
