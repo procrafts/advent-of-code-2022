@@ -5,7 +5,7 @@ module.exports = function readInput(n, asExample = false) {
   const type = asExample ? "example" : "input";
   n = +n < 10 ? "0" + n : "" + n;
   return readFileSync(
-    join(__dirname, "..", "..", `challenge${n}-${type}.txt`),
+    join(__dirname, "..", "..", "challenges", `challenge${n}-${type}.txt`),
     "utf-8"
   );
 };
